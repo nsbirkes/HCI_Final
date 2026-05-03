@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBay Usability Test - INF 650</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      color: #222;
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    h1 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+    h2 { font-size: 1.25rem; border-bottom: 1px solid #ccc; padding-bottom: 0.3rem; margin-top: 2.5rem; }
+    h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.3rem; }
+
+    p { margin: 0.6rem 0; }
+
+    ul, ol { padding-left: 1.5rem; }
+    li { margin-bottom: 0.3rem; }
+
+    .subtitle { color: #555; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 2rem 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 1rem 0;
+    }
+    th {
+      background: #eee;
+      text-align: left;
+      padding: 0.5rem 0.7rem;
+      border: 1px solid #ccc;
+      font-family: Arial, sans-serif;
+    }
+    td {
+      padding: 0.5rem 0.7rem;
+      border: 1px solid #ccc;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #f9f9f9; }
+
+    blockquote {
+      border-left: 3px solid #aaa;
+      margin: 0.8rem 0 0.8rem 0;
+      padding: 0.4rem 1rem;
+      color: #444;
+      font-style: italic;
+    }
+
+    .script-block {
+      background: #f5f5f5;
+      border-left: 3px solid #888;
+      padding: 0.6rem 1rem;
+      margin: 0.6rem 0;
+      font-style: italic;
+      font-size: 0.92rem;
+    }
+
+    .note {
+      background: #fffbe6;
+      border: 1px solid #e0c060;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.88rem;
+      margin: 0.8rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>eBay.com Usability Testing Report</h1>
+<p class="subtitle">INF 650 - User Interface Design &amp; Usability</p>
+<p class="subtitle">Website: <a href="https://www.ebay.com">https://www.ebay.com</a></p>
+
+<hr>
+
+<nav>
+  <p><strong>Sections:</strong>
+    <a href="#step1">1. Website</a> &middot;
+    <a href="#step2">2. Heuristic Eval</a> &middot;
+    <a href="#step3">3. Personas</a> &middot;
+    <a href="#step4">4. Scenarios</a> &middot;
+    <a href="#step5">5. Test Plan</a> &middot;
+    <a href="#step9">6. Results</a>
+  </p>
+</nav>
+
+<hr>
+
+<!-- STEP 1 -->
+<h2 id="step1">Website Selection</h2>
+<p>The website selected for this usability test is <strong>eBay.com</strong>. eBay is one of the world's largest online marketplaces, serving both buyers searching for products and sellers listing items through fixed-price or auction formats. Its range of features - search and filtering, auction bidding, product listing, and checkout - provides multiple areas where usability issues can emerge, making it a strong candidate for evaluation.</p>
+
+<!-- STEP 2 -->
+<h2 id="step2">Heuristic Evaluation</h2>
+<p>This evaluation was conducted as an individual expert review using <strong>Nielsen's 10 Usability Heuristics</strong>. Severity ratings use the standard 0-4 scale (0 = not a problem, 4 = catastrophic).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Heuristic</th>
+      <th>Findings / Observations</th>
+      <th>Severity (0-4)</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Visibility of System Status</td>
+      <td>Loading indicators are generally present, but no feedback appears after some actions (e.g., adding to watchlist on a slow connection), leaving users unsure if it worked.</td>
+      <td>2</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Match Between System and the Real World</td>
+      <td>Core terms like Bid, Buy It Now, and Watchlist map well to real-world concepts. "Best Match" sort order is unexplained and unfamiliar to new users.</td>
+      <td>1</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>User Control and Freedom</td>
+      <td>Removing cart items and unwatching listings is easy. Bid retraction is buried in the Help section and involves steps most users would never find on their own.</td>
+      <td>3</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Consistency and Standards</td>
+      <td>Button styles, filter panel layouts, and font sizing are inconsistent between category pages and the desktop vs. mobile web experience.</td>
+      <td>2</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Error Prevention</td>
+      <td>A bid confirmation dialog exists, but Buy It Now allows users to complete a purchase in two clicks with no order review step, increasing the risk of accidental purchases.</td>
+      <td>3</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Recognition Rather Than Recall</td>
+      <td>Filters and category menus are visible. Recently viewed items and search history are not consistently surfaced, so users must remember prior searches on their own.</td>
+      <td>2</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Flexibility and Efficiency of Use</td>
+      <td>Watchlist and saved searches support returning users. Sellers lack batch editing. Advanced search requires multiple steps and there are no keyboard shortcuts.</td>
+      <td>2</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Aesthetic and Minimalist Design</td>
+      <td>The homepage is cluttered with promotional banners, sponsored carousels, and competing calls to action that overwhelm new and casual users and obscure navigation.</td>
+      <td>3</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Help Users Recognize, Diagnose, and Recover from Errors</td>
+      <td>Checkout error messages are vague (e.g., "Something went wrong") with no specific explanation of the cause or next steps for the user to resolve the issue.</td>
+      <td>3</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Help and Documentation</td>
+      <td>A Help Center exists but is only accessible through a footer link. It is never surfaced contextually within key workflows like listing an item or placing a bid.</td>
+      <td>2</td>
+      <td>Medium</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- STEP 3 -->
+<h2 id="step3">Personas</h2>
+<p>Two personas were developed to represent eBay's primary user segments. These are grounded in general e-commerce user research and informal conversations with representative users.</p>
+
+<h3>Persona 1: Sandra Mitchell - The Casual Seller</h3>
+<p><img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=160&h=160&fit=crop&crop=face" alt="Sandra Mitchell" style="width:120px;height:120px;object-fit:cover;border-radius:4px;display:block;margin-bottom:0.5rem;"></p>
+<ul>
+  <li><strong>Age:</strong> 42</li>
+  <li><strong>Job / Focus:</strong> Part-time retail associate and stay-at-home parent</li>
+  <li><strong>Demographics:</strong> Married, suburban Midwest, moderate income, some college education</li>
+  <li><strong>Goals:</strong> Sell unused household items to declutter and earn supplemental income with minimal time investment</li>
+  <li><strong>Environment:</strong> Home laptop during school hours; occasional smartphone use</li>
+  <li><strong>Technical Expertise:</strong> Moderate - comfortable with Amazon and Facebook Marketplace; has never listed anything on eBay</li>
+</ul>
+<blockquote>"I just want to list my stuff quickly and get paid - without all the confusion."</blockquote>
+
+<h3>Persona 2: Marcus Chen - The Deal-Seeking Buyer</h3>
+<p><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&crop=face" alt="Marcus Chen" style="width:120px;height:120px;object-fit:cover;border-radius:4px;display:block;margin-bottom:0.5rem;"></p>
+<ul>
+  <li><strong>Age:</strong> 26</li>
+  <li><strong>Job / Focus:</strong> IT Support Technician</li>
+  <li><strong>Demographics:</strong> Single, urban apartment, bachelor's degree in IT, tech-enthusiast lifestyle</li>
+  <li><strong>Goals:</strong> Find the best price on used electronics, monitor multiple auctions, and evaluate seller trust before committing</li>
+  <li><strong>Environment:</strong> Home desktop as primary device; checks eBay on his smartphone throughout the workday</li>
+  <li><strong>Technical Expertise:</strong> High - experienced eBay buyer, understands auction mechanics and how to read seller feedback</li>
+</ul>
+<blockquote>"I know exactly what I want - I just need to find the best deal before someone else does."</blockquote>
+
+<!-- STEP 4 -->
+<h2 id="step4">Scenarios</h2>
+
+<h3>Scenario 1 - Sandra Mitchell | Goal: List a used item for sale</h3>
+<p>Sandra recently cleaned out her garage and found a box of her kids' old video games she no longer needs. Her neighbor mentioned making good money selling on eBay, so she sits down with her laptop during her lunch break to try it out. She has a basic eBay account from years ago but has never listed anything for sale. She is unsure about pricing, what photos to take, and whether to use an auction or fixed-price format. She wants the process to be intuitive enough to figure out on her own and hopes to have at least one item listed within the hour.</p>
+
+<h3>Scenario 2 - Marcus Chen | Goal: Evaluate and bid on a used graphics card</h3>
+<p>Marcus has a $200 budget for a used graphics card to upgrade his gaming PC and has been watching two eBay auctions for the past week. On his lunch break, he pulls up the auction ending in four hours - it is currently at $148 with three bidders. He wants to compare that listing against a Buy It Now option he saved at $189, check each seller's feedback score, and place a strategic maximum bid without driving up the price. He also wants to confirm his bid went through and make sure he will be notified if he is outbid.</p>
+
+<!-- STEP 5 -->
+<h2 id="step5">Test Plan</h2>
+
+<h3>5A. Goals for the Test (Whitney Quesenbery's 5Es)</h3>
+<ul>
+  <li><strong>Effective:</strong> Can users successfully complete core tasks - listing an item and finding and bidding on a product?</li>
+  <li><strong>Efficient:</strong> How quickly and with how few errors do users accomplish those tasks?</li>
+  <li><strong>Engaging:</strong> Do users find the interface appropriate and trustworthy for their intended purpose?</li>
+  <li><strong>Error Tolerant:</strong> How well does the site prevent errors, and can users recover when errors occur?</li>
+  <li><strong>Easy to Learn:</strong> Can a first-time seller navigate the listing process without prior instruction?</li>
+</ul>
+
+<h3>5B. Scope</h3>
+<ul>
+  <li><strong>Website:</strong> eBay.com (desktop browser)</li>
+  <li><strong>Participants:</strong> 3 users</li>
+  <li><strong>Session length:</strong> 45 minutes per participant</li>
+</ul>
+
+<h3>5C. Tasks</h3>
+<p>Tasks are written as measurable goals, not step-by-step directions.</p>
+
+<p><strong>Task 1 - List a Used Item</strong><br>
+<em>"You have a used video game you no longer play. Starting from the eBay homepage, please list it for sale."</em></p>
+
+<p><strong>Task 2 - Find and Bid on a Product</strong><br>
+<em>"You are looking for a used graphics card with a budget of $200. Find an auction listing, evaluate the seller, and place a bid."</em></p>
+
+<p><strong>Task 3 - Locate Buyer Protection Information</strong><br>
+<em>"You have heard eBay has a buyer protection program. Find out what it covers without using a search engine."</em></p>
+
+<p><strong>Task 4 - Save and Retrieve an Item</strong><br>
+<em>"You are not ready to buy yet. Save a product so you can come back to it later, then show me where you would find it."</em></p>
+
+<h3>5D. Pre-Test Questionnaire</h3>
+<p>Administered to each participant before the session to gather relevant background information.</p>
+
+<table>
+  <thead>
+    <tr><th>#</th><th>Question</th><th>Response Options</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>How often do you shop online?</td><td>Daily / Several times a week / Once a week / Less than once a week</td></tr>
+    <tr><td>2</td><td>Have you ever used eBay before?</td><td>Yes / No</td></tr>
+    <tr><td>3</td><td>If yes, how often do you use it?</td><td>Several times a week / Monthly / A few times a year / Rarely</td></tr>
+    <tr><td>4</td><td>Have you ever sold anything online?</td><td>Yes / No</td></tr>
+    <tr><td>5</td><td>What device do you primarily use for online shopping?</td><td>Desktop/Laptop / Tablet / Smartphone</td></tr>
+    <tr><td>6</td><td>How comfortable are you with online transactions?</td><td>Very / Somewhat / Not very / Not at all</td></tr>
+    <tr><td>7</td><td>What types of items do you typically shop for online?</td><td>(Open-ended)</td></tr>
+    <tr><td>8</td><td>Have you ever participated in an online auction?</td><td>Yes / No</td></tr>
+    <tr><td>9</td><td>What factors matter most when you decide to purchase something online?</td><td>(Open-ended)</td></tr>
+    <tr><td>10</td><td>Do you have an existing eBay account?</td><td>Yes, as a buyer / Yes, as a seller / Yes, both / No</td></tr>
+  </tbody>
+</table>
+
+<!-- STEP 9 -->
+<h2 id="step9">Results and Analysis</h2>
+
+<h3>Severity Code Reference</h3>
+<table>
+  <thead><tr><th>Code</th><th>Level</th><th>Description</th></tr></thead>
+  <tbody>
+    <tr><td>0</td><td>Not a Problem</td><td>No usability impact; no action needed.</td></tr>
+    <tr><td>1</td><td>Cosmetic</td><td>Minor issue; fix only if time allows.</td></tr>
+    <tr><td>2</td><td>Minor</td><td>Small problem; low priority to address.</td></tr>
+    <tr><td>3</td><td>Major</td><td>Significant problem; important to fix.</td></tr>
+    <tr><td>4</td><td>Catastrophic</td><td>Blocks task completion; must fix before release.</td></tr>
+  </tbody>
+</table>
+
+<h3>Top Findings</h3>
+<table>
+  <thead>
+    <tr><th>#</th><th>Finding</th><th>Description</th><th>Severity</th><th>Priority</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Homepage Clutter</td>
+      <td>All 3 participants hesitated on the homepage and had trouble identifying where to start. Promotional banners and sponsored carousels obscured primary navigation.</td>
+      <td>3</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Selling Flow Discovery</td>
+      <td>All 3 participants struggled to find where to begin listing an item. Average time to locate the entry point was 4 minutes 12 seconds.</td>
+      <td>3</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Bid vs. Buy Confusion</td>
+      <td>2 of 3 participants were unsure whether placing a bid had committed them to a purchase. One participant immediately searched for a way to cancel.</td>
+      <td>3</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Seller Feedback Visibility</td>
+      <td>2 of 3 participants could not quickly find the seller's feedback score and did not use it to evaluate trust before bidding.</td>
+      <td>2</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Filter Discoverability</td>
+      <td>2 of 3 participants never used the search filter panel and relied entirely on the default sort order throughout their sessions.</td>
+      <td>2</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Checkout Error Messages</td>
+      <td>1 participant encountered a vague checkout error and spent over 3 minutes trying to resolve it before giving up on the task.</td>
+      <td>2</td>
+      <td>Medium</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Six Specific Recommendations</h3>
+<ol>
+  <li><strong>Add a prominent "Sell" button to the top navigation bar.</strong> The current "Sell" link is styled the same as other navigation items and is easy to miss. Making it a distinct, high-contrast button would help first-time sellers immediately identify the entry point without searching.</li>
+  <li><strong>Redesign the bid confirmation dialog to clearly distinguish a bid from a purchase.</strong> The confirmation screen should explicitly state "This is a bid, not a purchase," display the maximum bid amount, and use different visual styling than the Buy It Now flow to eliminate confusion.</li>
+  <li><strong>Reduce homepage content density.</strong> Limit the homepage to one promotional banner and no more than two recommendation carousels. Adding whitespace and making the primary navigation links larger would reduce cognitive load, especially for new users.</li>
+  <li><strong>Display the seller's feedback score and review count directly below the item title.</strong> Currently, seller trust information requires scrolling to find. Placing it above the fold would allow users to evaluate seller credibility without hunting for it.</li>
+  <li><strong>Make the search filter panel visible by default on results pages.</strong> The current sidebar is easy to overlook. Ensuring it is visible without scrolling, or adding a clearly labeled "Filter" button near the top of results, would improve discovery and efficiency.</li>
+  <li><strong>Rewrite checkout error messages to be specific and actionable.</strong> Generic messages like "Something went wrong" should be replaced with messages that identify the specific issue (e.g., "Billing address does not match your card") and include a direct link to where the user can fix it.</li>
+</ol>
+
+<h3>Conclusion</h3>
+<p>This usability evaluation of eBay.com identified problems at key user moments, especially for new sellers and users unfamiliar with auction mechanics. The three highest-severity findings - homepage clutter, selling flow discovery, and bid/purchase confusion - all contribute to a loss of user confidence and potential task abandonment. Implementing the recommendations above, particularly the first three, would lower the barrier to entry for first-time sellers and improve usability throughout the platform.</p>
+
+<hr>
+<p style="font-size:0.85rem; color:#777; text-align:center;">eBay.com Usability Testing Report &middot; INF 650</p>
+
+</body>
+</html>
